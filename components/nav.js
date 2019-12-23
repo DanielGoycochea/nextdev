@@ -1,56 +1,61 @@
-import React from 'react'
-import Link from 'next/link'
+import React from 'react';
 
-const links = [
-  { href: 'https://zeit.co/now', label: 'ZEIT' },
-  { href: 'https://github.com/zeit/next.js', label: 'GitHub' }
-].map(link => {
-  link.key = `nav-link-${link.href}-${link.label}`
-  return link
-})
+const Nav = () => {
+    return (
+        <header className="container__nav">
+            <a href="#" className="nombre__nav">
+                <span>Daniel Goycochea</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Sobre mi</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Trabajos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+            <style jsx>{`
+                .container__nav{
+                    background: #333;
+                    color: #ffffff;
+                    height: 80px;
+                }
+                
+                .nombre__nav{
+                    color: white;
+                    text-decoration: none;
+                }
+                nav{
+                    float: right;
+                }
+                nav ul{
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                    padding-right: 20px;
+                }
 
-const Nav = () => (
-  <nav>
-    <ul>
-      <li>
-        <Link href='/'>
-          <a>Home</a>
-        </Link>
-      </li>
-      {links.map(({ key, href, label }) => (
-        <li key={key}>
-          <a href={href}>{label}</a>
-        </li>
-      ))}
-    </ul>
+                nav ul li{
+                    display: inline-block;
+                    line-height: 80px;
+                }
+                nav ul li a {
+                    display: block;
+                    padding: 0 10px;
+                    text-decoration: none;
+                    color: white;
+                }
+                nav ul li a:hover {
+					background: #0b76a6;
+				}
 
-    <style jsx>{`
-      :global(body) {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
-          Helvetica, sans-serif;
-      }
-      nav {
-        text-align: center;
-      }
-      ul {
-        display: flex;
-        justify-content: space-between;
-      }
-      nav > ul {
-        padding: 4px 16px;
-      }
-      li {
-        display: flex;
-        padding: 6px 8px;
-      }
-      a {
-        color: #067df7;
-        text-decoration: none;
-        font-size: 13px;
-      }
-    `}</style>
-  </nav>
-)
+                
+                `}
 
-export default Nav
+            </style>
+        </header>
+    );
+};
+
+export default Nav;

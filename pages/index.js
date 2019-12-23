@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
-import Construccion from '../components/Construccion'
+import Nav from '../components/Nav'
+import Header from '../components/Header'
 
 
 const Home = () => (
@@ -8,23 +9,19 @@ const Home = () => (
     <Head>
       <title>daniel.dev</title>
       <link rel='icon' href='/favicon.ico' />
-      <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet"></link>
+      <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet"></link>
     </Head>
-   <Construccion/>
+    <Nav/>
+    <Header/>
+
     
     <style jsx global>{`
       body{
-        background: #0D0D0D;
+        background: #ffffff;
         margin: 0;
-        color: #fff;
         font-family: 'Noto Sans', sans-serif;
+        padding: 0;
       }
-      .container{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 739px;
-
       }
 
 
